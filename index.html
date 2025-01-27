@@ -1,63 +1,169 @@
-
-<!-- HTML (index.html) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #87CEEB;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+        }
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .container {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .main-image {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+        }
+        .small-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 200px;
+            text-align: center;
+        }
+        .whatsapp-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #25D366;
+        }
+        footer {
+            background-color: rgb(238, 253, 255);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-menus {
+            display: flex;
+            gap: 50px;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-map {
+            width: 300px;
+            height: 200px;
+            background: grey;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">My Logo</div>
-            <ul class="nav-links">
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#member">Member</a></li>
-                <li><a href="#appointment">Appointment</a></li>
+            <div class="logo">LOGO</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
         </nav>
     </header>
-
-    <main class="container">
-        <div class="image-gallery">
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-            <img src="image4.jpg" alt="Image 4">
+    
+    <div class="container">
+        <img src="hero-image.jpg" alt="Main Image" class="main-image">
+        <div class="small-boxes">
+            <div class="box">
+                <img src="image1.jpg" alt="Image 1">
+                <h3>Title 1</h3>
+                <p>Description for image 1.</p>
+            </div>
+            <div class="box">
+                <img src="image2.jpg" alt="Image 2">
+                <h3>Title 2</h3>
+                <p>Description for image 2.</p>
+            </div>
+            <div class="box">
+                <img src="image3.jpg" alt="Image 3">
+                <h3>Title 3</h3>
+                <p>Description for image 3.</p>
+            </div>
+            <div class="box">
+                <img src="image4.jpg" alt="Image 4">
+                <h3>Title 4</h3>
+                <p>Description for image 4.</p>
+            </div>
         </div>
-    </main>
-
+        <a href="https://wa.me/1234567890" class="whatsapp-logo">&#9742;</a>
+    </div>
+    
     <footer>
-        <div class="footer-columns">
-            <div class="column">
-                <p>Info 1</p>
-                <p>Info 2</p>
-                <p>Info 3</p>
+        <div class="social-links">Social Media Links</div>
+        <div class="footer-menus">
+            <div class="menu">
+                <h4>Menu 1</h4>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                </ul>
             </div>
-            <div class="column">
-                <p>Info 4</p>
-                <p>Info 5</p>
-                <p>Info 6</p>
-            </div>
-            <div class="column">
-                <p>Info 7</p>
-                <p>Info 8</p>
-                <p>Info 9</p>
-            </div>
-            <div class="column">
-                <p>Info 10</p>
-                <p>Info 11</p>
-                <p>Info 12</p>
-            </div>
-            <div class="column">
-                <p>Info 13</p>
-                <p>Info 14</p>
-                <p>Info 15</p>
-            </div>
+            <div class="footer-map">Google Map Here</div>
         </div>
     </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
