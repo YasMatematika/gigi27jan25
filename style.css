@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #87ceeb;
+    background-color: #ebc087;
     padding: 15px;
     color: white;
 }
@@ -42,11 +42,11 @@ body {
 .image-gallery img {
     max-width: 200px;
     border-radius: 10px;
-    border: 2px solid #87ceeb;
+    border: 2px solid #ebc387;
 }
 
 footer {
-    background-color: #87ceeb;
+    background-color:black;
     color: white;
     padding: 20px;
     text-align: center;
